@@ -4,7 +4,11 @@ class SpacexAPI extends RESTDataSource {
 
     constructor() {
         super();
-        this.baseURL = 'https://api.spacex.land/graphql/';
+        this.baseURL = 'https://api.spacex.land/rest/';
+    }
+
+    getMissions() {
+        return this.get('missions');
     }
 
 }
