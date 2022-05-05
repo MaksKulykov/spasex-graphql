@@ -10,6 +10,10 @@ export const widths = {
     textPageWidth: 800,
 };
 
+export const colors = {
+    text: '#000000',
+};
+
 const GlobalStyles = createGlobalStyle`
     html {
         height: 100%;

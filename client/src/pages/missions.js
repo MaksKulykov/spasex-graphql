@@ -2,6 +2,7 @@ import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import Layout from '../components/layout';
 import QueryResult from '../components/query-result';
+import MissionCard from '../components/mission-card';
 
 /** MISSIONS query to retrieve all missions */
 export const MISSIONS = gql`
@@ -23,7 +24,7 @@ const Missions = () => {
         <Layout grid>
             <QueryResult error={error} loading={loading} data={data}>
                 {data?.missions?.map(mission => (
-                    <div key={mission.id} > {mission.id} {mission.name} </div>
+                    <MissionCard key={mission.id} mission={mission} />
                 ))}
             </QueryResult>
         </Layout>
