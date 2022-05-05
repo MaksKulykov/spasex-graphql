@@ -1,6 +1,7 @@
 import React from 'react';
 import { gql, useQuery } from '@apollo/client';
 import Layout from '../components/layout';
+import QueryResult from '../components/query-result';
 
 /** MISSIONS query to retrieve all missions */
 export const MISSIONS = gql`
@@ -18,14 +19,13 @@ export const MISSIONS = gql`
  */
 const Missions = () => {
     const { loading, error, data } = useQuery(MISSIONS);
-    if (loading) return 'Loading...';
-    if (error) return `Error! ${error.message}`;
-    console.log(data);
     return (
         <Layout grid>
-            {data?.missions?.map(mission => (
-                <div key={mission.id} > {mission.id} {mission.name} </div>
-            ))}
+            <QueryResult error={error} loading={loading} data={data}>
+                {data?.missions?.map(mission => (
+                    <div key={mission.id} > {mission.id} {mission.name} </div>
+                ))}
+            </QueryResult>
         </Layout>
     );
 };
