@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, mq, unit } from '../globalStyles';
+import { colors, device, unit } from '../globalStyles';
 
 /**
  * Mission Card component renders basic info in a card format
@@ -34,5 +34,13 @@ const CardContainer = styled.div`
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    width: 31%;
+    @media only screen and ${device.md} {
+        width: 31%;
+    };
+    @media only screen and ${device.sm} {
+        width: 47%;
+    };
+    @media only screen and ${device.xs} {
+        width: 90%;
+    };
 `;

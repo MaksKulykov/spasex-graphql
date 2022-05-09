@@ -1,7 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
-const breakpoints = [480, 768, 992, 1200];
-export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+const size = {
+    xs: '480px',
+    sm: '768px',
+    md: '992px'
+};
+
+export const device = {
+    xs: `(max-width: ${size.sm})`,
+    sm: `(min-width: ${size.sm}) and (max-width: ${size.md})`,
+    md: `(min-width: ${size.md})`
+}
 
 export const unit = 8;
 export const widths = {
