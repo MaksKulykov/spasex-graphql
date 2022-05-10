@@ -10,6 +10,7 @@ export const MISSIONS = gql`
         missions {
             id
             name
+            description
         }
     }
 `;
