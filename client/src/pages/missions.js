@@ -16,7 +16,7 @@ export const MISSIONS = gql`
 `;
 
 /**
- * Tracks Page is the SpaseX home page.
+ * Missions Page is the SpaseX mission`s page.
  * We display a grid of missions fetched with useQuery with the MISSIONS query
  */
 const Missions = () => {

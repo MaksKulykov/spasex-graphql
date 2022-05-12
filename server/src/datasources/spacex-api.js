@@ -7,6 +7,14 @@ class SpacexAPI extends RESTDataSource {
         this.baseURL = 'https://api.spacex.land/rest/';
     }
 
+    getCompanyInfo() {
+        return this.get('company');
+    }
+
+    getLaunchLatest() {
+        return this.get('launch-latest');
+    }
+
     getMissions() {
         return this.get('missions');
     }
