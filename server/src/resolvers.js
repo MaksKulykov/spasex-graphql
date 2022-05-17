@@ -9,9 +9,9 @@ const resolvers = {
         company: (_, __, {dataSources}) => {
             return dataSources.spacexAPI.getCompanyInfo();
         },
-        // returns info about the latest launch
-        launchLatest: (_, __, {dataSources}) => {
-            return dataSources.spacexAPI.getLaunchLatest();
+        // returns an array of Ships
+        ships: (_, __, {dataSources}) => {
+            return dataSources.spacexAPI.getShips();
         },
     }
 

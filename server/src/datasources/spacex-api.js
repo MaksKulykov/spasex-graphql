@@ -11,8 +11,8 @@ class SpacexAPI extends RESTDataSource {
         return this.get('company');
     }
 
-    getLaunchLatest() {
-        return this.get('launch-latest');
+    getShips() {
+        return this.get('ships');
     }
 
     getMissions() {
