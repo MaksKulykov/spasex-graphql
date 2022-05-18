@@ -13,6 +13,10 @@ const resolvers = {
         ships: (_, __, {dataSources}) => {
             return dataSources.spacexAPI.getShips();
         },
+        // get a single ship by ID, for the info page
+        ship: (_, {id}, {dataSources}) => {
+            return dataSources.spacexAPI.getShip(id);
+        },
     }
 
 };

@@ -1,17 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const InfoPage = ({ company, ships }) => {
+const InfoPage = ({ company, ship }) => {
     const { ceo, coo, cto } = company;
 
-    console.log(ships);
+    console.log(ship);
 
     return (
         <InfoPageContaner>
             {ceo}
             {coo}
             {cto}
-            {ships[0].image}
+            <img alt={ship.image} src={ship.image} />
         </InfoPageContaner>
     );
 };

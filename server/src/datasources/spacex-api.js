@@ -15,6 +15,10 @@ class SpacexAPI extends RESTDataSource {
         return this.get('ships');
     }
 
+    getShip(shipId) {
+        return this.get(`ship/${shipId}`);
+    }
+
     getMissions() {
         return this.get('missions');
     }

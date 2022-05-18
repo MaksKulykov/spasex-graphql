@@ -16,10 +16,10 @@ const COMPANY = gql`
     }
 `;
 
-/** SHIPS query to retrieve info about the ships */
-const SHIPS = gql`
-    query getShips {
-        ships {
+/** SHIP query to retrieve info about the ship */
+const SHIP = gql`
+    query getShip($shipId: ID!) {
+        ship(id: $shipId) {
             id,
             name,
             image
@@ -32,17 +32,20 @@ const SHIPS = gql`
  * We display a company info fetched with useQuery with the COMPANY and SHIPS queries
  */
 const CompanyInfo = () => {
-    const { document } = combineQuery('CompanyLaunchLatestQuery')
+    const shipId = 'OCISLY';
+    const { document } = combineQuery('CompanyShipQuery')
         .add(COMPANY)
-        .add(SHIPS);
+        .add(SHIP);
 
     console.log(document);
-    const { loading, error, data } = useQuery(document);
+    const { loading, error, data } = useQuery(document, {
+        variables: { shipId }
+    });
     if (data) {
         return (
             <Layout grid>
                 <QueryResult error={error} loading={loading} data={data}>
-                    <InfoPage key={'companyInfo'} company={data.company} ships={data.ships} />
+                    <InfoPage key={'companyInfo'} company={data.company} ship={data.ship} />
                 </QueryResult>
             </Layout>
         );
