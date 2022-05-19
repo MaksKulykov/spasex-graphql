@@ -9,9 +9,10 @@ import InfoPage from '../components/info';
 const COMPANY = gql`
     query getCompany {
         company {
-            ceo,
-            coo,
-            cto
+            employees
+            founder
+            name
+            summary
         }
     }
 `;
@@ -20,8 +21,7 @@ const COMPANY = gql`
 const SHIP = gql`
     query getShip($shipId: ID!) {
         ship(id: $shipId) {
-            id,
-            name,
+            id
             image
         }
     }

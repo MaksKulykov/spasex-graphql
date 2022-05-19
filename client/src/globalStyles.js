@@ -20,7 +20,8 @@ export const widths = {
 };
 
 export const colors = {
-    text: '#000000',
+    text: '#ffffff',
+    background: '#0a1b22'
 };
 
 const GlobalStyles = createGlobalStyle`
@@ -39,6 +40,8 @@ const GlobalStyles = createGlobalStyle`
         display: flex;
         flex-direction: column;
         min-height: 100%;
+        background-color: ${colors.background};
+        color: ${colors.text};
     }
     * {
         margin: 0;

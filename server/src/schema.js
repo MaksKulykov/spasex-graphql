@@ -13,12 +13,14 @@ const typeDefs = gql`
     }
     
     type Company {
-        "The chief executive officer"
-        ceo: String
-        "The chief operating officer"
-        coo: String
-        "The chief technology officer"
-        cto: String
+        "Number of employees"
+        employees: Int
+        "Founder of the company"
+        founder: String
+        "Company name"
+        name: String
+        "Description"
+        summary: String
     }
     
     type Ship {
