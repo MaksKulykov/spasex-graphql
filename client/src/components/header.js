@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors } from '../globalStyles';
+import { colors, device } from '../globalStyles';
 import logo_white from '../assets/logo_white.svg';
 
 /**
@@ -29,6 +29,15 @@ const HeaderContainer = styled.div`
     padding: 5px 30px;
     min-height: 80px;
     background-color: ${colors.background};
+    @media only screen and ${device.md} {
+        min-height: 80px;
+    };
+    @media only screen and ${device.sm} {
+        min-height: 60px;
+    };
+    @media only screen and ${device.xs} {
+        min-height: 40px;
+    };
 `;
 
 const LogoContainer = styled.div`
@@ -37,5 +46,13 @@ const LogoContainer = styled.div`
 `;
 
 const Logo = styled.img`
-    width: 300px;
+    @media only screen and ${device.md} {
+        width: 300px;
+    };
+    @media only screen and ${device.sm} {
+        width: 250px;
+    };
+    @media only screen and ${device.xs} {
+        width: 200px;
+    };
 `;
