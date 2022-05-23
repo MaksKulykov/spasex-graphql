@@ -43,34 +43,40 @@ const InfoPageContainer = styled.div`
 
 const InfoPageImage = styled.div`
     margin: 0 0 ${unit}px ${unit}px;
-    float: right;
     background: ${props => `url(${props.background_img}) no-repeat center center`};
     background-size: cover;
     box-shadow: 0 0 ${unit}px ${unit}px ${colors.background} inset;
     @media only screen and ${device.md} {
         width: 600px;
         height: 400px;
+        float: right;
     };
     @media only screen and ${device.sm} {
         width: 100%;
         height: 400px;
+        float: none;
+        margin: 0;
     };
     @media only screen and ${device.xs} {
         width: 100%;
         height: 300px;
+        float: none;
+        margin: 0;
     };
 `;
 
 const InfoPageContent = styled.p`
-    margin-top: 30%;
     font-style: italic;
     @media only screen and ${device.md} {
         font-size: 2rem;
+        margin-top: 30%;
     };
     @media only screen and ${device.sm} {
         font-size: 1.5rem;
+        margin-top: 4rem;
     };
     @media only screen and ${device.xs} {
         font-size: 1rem;
+        margin-top: 4rem;
     };
 `;
