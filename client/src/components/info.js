@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import { colors, unit } from '../globalStyles';
+import { colors, device, unit } from '../globalStyles';
 
 const InfoPage = ({ company, ship }) => {
 
@@ -42,17 +42,35 @@ const InfoPageContainer = styled.div`
 `;
 
 const InfoPageImage = styled.div`
-    width: 600px;
-    height: 400px;
     margin: 0 0 ${unit}px ${unit}px;
     float: right;
-    background: ${props => `url(${props.background_img}) no-repeat top center`};
+    background: ${props => `url(${props.background_img}) no-repeat center center`};
     background-size: cover;
     box-shadow: 0 0 ${unit}px ${unit}px ${colors.background} inset;
+    @media only screen and ${device.md} {
+        width: 600px;
+        height: 400px;
+    };
+    @media only screen and ${device.sm} {
+        width: 100%;
+        height: 400px;
+    };
+    @media only screen and ${device.xs} {
+        width: 100%;
+        height: 300px;
+    };
 `;
 
 const InfoPageContent = styled.p`
     margin-top: 30%;
     font-style: italic;
-    font-size: 32px;
+    @media only screen and ${device.md} {
+        font-size: 2rem;
+    };
+    @media only screen and ${device.sm} {
+        font-size: 1.5rem;
+    };
+    @media only screen and ${device.xs} {
+        font-size: 1rem;
+    };
 `;
