@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { widths, unit } from '../globalStyles';
+import Header from './header';
 
 /**
  * Layout renders the full page content:
@@ -9,6 +10,7 @@ import { widths, unit } from '../globalStyles';
 const Layout = ({ fullWidth, children, grid }) => {
     return (
         <>
+            <Header />
             <PageContainer fullWidth={fullWidth} grid={grid}>
                 {children}
             </PageContainer>

@@ -1,31 +1,10 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import combineQuery from 'graphql-combine-query';
 import Layout from '../components/layout';
 import QueryResult from '../components/query-result';
 import InfoPage from '../components/info';
-
-/** COMPANY query to retrieve company info */
-const COMPANY = gql`
-    query getCompany {
-        company {
-            employees
-            founder
-            name
-            summary
-        }
-    }
-`;
-
-/** SHIP query to retrieve info about the ship */
-const SHIP = gql`
-    query getShip($shipId: ID!) {
-        ship(id: $shipId) {
-            id
-            image
-        }
-    }
-`;
+import { COMPANY, SHIP } from '../queries/queries';
 
 /**
  * Company Info is the SpaseX home page.
