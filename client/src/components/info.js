@@ -11,8 +11,6 @@ const InfoPage = ({ company, ship }) => {
         index = React.useRef(0);
 
     useEffect(() => {
-        console.log(string);
-        console.log(text);
         function tick() {
             setText(text + string[index.current]);
             index.current++;
