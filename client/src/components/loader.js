@@ -1,12 +1,13 @@
 import React from 'react';
 import { TailSpin } from 'react-loader-spinner';
+import { colors } from '../globalStyles';
 
 const Loader = () => {
     return (
         <TailSpin
-            color='#4169E1'
-            height={50}
-            width={50}
+            color = { colors.text }
+            height = { 50 }
+            width = { 50 }
         />
     );
 };
